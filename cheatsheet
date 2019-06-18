@@ -1,1 +1,7 @@
+# easy way to transfer files
 python -m http.server <port>
+wget -r http://<ip address>:<port>
+
+
+
+
