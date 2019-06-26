@@ -21,3 +21,6 @@ exploit : https://sathisharthars.com/2014/06/10/exploit-heartbleed-openssl-vulne
 
 # repository kali
 https://docs.kali.org/general-use/kali-linux-sources-list-repositories
+
+# upgrade shell
+python -c 'import pty; pty.spawn("/bin/bash")'
