@@ -24,3 +24,6 @@ https://docs.kali.org/general-use/kali-linux-sources-list-repositories
 
 # upgrade shell
 python -c 'import pty; pty.spawn("/bin/bash")'
+
+# grep recursif
+grep -ir 'password'
