@@ -46,6 +46,8 @@ nmap --script smb-enum-shares -p139 10.10.10.123
 smbclient //10.10.10.123/general -u root
 smb: \> ls
 smb: \> get
+#upload file
+curl --upload-file /path/to/file.ext -u 'DOMAIN\Username' smb://172.16.17.52/ShareName/
 
 #DNS
 dig axfr <subdomain>@10.10.10.123
