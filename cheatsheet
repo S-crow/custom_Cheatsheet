@@ -43,7 +43,7 @@ open port 21 then nc on 6200
 #SMB
 smbmap -H 10.10.10.123 -u root -p 445
 nmap --script smb-enum-shares -p139 10.10.10.123 
-smbclient //10.10.10.123/general -u root
+smbclient //10.10.10.123/general -U root
 smb: \> ls
 smb: \> get
 #upload file
