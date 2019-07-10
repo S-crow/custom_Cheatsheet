@@ -54,3 +54,6 @@ dig axfr <subdomain>@10.10.10.123
 
 #Visualize strings in binary files
 tool -> bless
+
+#Read pst file
+tool -> readpst
