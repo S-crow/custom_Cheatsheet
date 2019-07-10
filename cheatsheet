@@ -57,3 +57,9 @@ tool -> bless
 
 #Read pst file
 tool -> readpst
+
+#Trick SQLI 
+creating an account with the username user’ OR 1=1#
+and when you logging in you see all notes
+
+
