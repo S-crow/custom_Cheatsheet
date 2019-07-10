@@ -52,3 +52,5 @@ curl --upload-file /path/to/file.ext -u 'DOMAIN\Username' smb://172.16.17.52/Sha
 #DNS
 dig axfr <subdomain>@10.10.10.123
 
+#Visualize strings in binary files
+tool -> bless
