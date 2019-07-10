@@ -18,6 +18,7 @@ http://localhost:8080/cgi-bin/vulnerable
 # heartbleed check
 nmap -sV -script=ssl-heartbleed [host]
 exploit : https://sathisharthars.com/2014/06/10/exploit-heartbleed-openssl-vulnerability-using-kali-linux/
+other exploit : https://gist.github.com/eelsivart/10174134
 
 # repository kali
 https://docs.kali.org/general-use/kali-linux-sources-list-repositories
