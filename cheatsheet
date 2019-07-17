@@ -83,3 +83,7 @@ $searchsploit Samba 3.0.20
 #List index elasticsearch  
 curl 'localhost:9200/_cat/indices?v'
 
+
+#CMS Made simple   
+https://packetstormsecurity.com/files/152356/CMS-Made-Simple-SQL-Injection.html  
+
