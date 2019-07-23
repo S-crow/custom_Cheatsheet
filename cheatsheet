@@ -95,3 +95,8 @@ sed -i -e "s/string1/string2/g" file
 
 #one liner
 echo -e 'input { \n  execute { \n    command => "ls"  \n    interval => 30 \n  } \n }' > test
+
+#backdoor Magento
+https://github.com/lavalamp-/LavaMagentoBD
+
+
