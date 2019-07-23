@@ -87,3 +87,7 @@ curl 'localhost:9200/_cat/indices?v'
 #CMS Made simple   
 https://packetstormsecurity.com/files/152356/CMS-Made-Simple-SQL-Injection.html  
 
+#LFI kibana
+
+#replace
+sed -i -e "s/string1/string2/g" file
