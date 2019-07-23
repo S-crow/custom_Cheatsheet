@@ -91,3 +91,6 @@ https://packetstormsecurity.com/files/152356/CMS-Made-Simple-SQL-Injection.html
 
 #replace
 sed -i -e "s/string1/string2/g" file
+
+#one line
+echo -e 'input { \n  execute { \n    command => "ls"  \n    interval => 30 \n  } \n }' > test
