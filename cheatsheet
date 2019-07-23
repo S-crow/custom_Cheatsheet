@@ -47,6 +47,8 @@ nmap --script smb-enum-shares -p139 10.10.10.123
 smbclient //10.10.10.123/general -U root  
 smb: \> ls  
 smb: \> get  
+#anonymous account
+smbclient //10.10.10.134/share -U " "%" "
 #upload file  
 curl --upload-file /path/to/file.ext -u 'DOMAIN\Username' smb://172.16.17.52/ShareName/  
 
