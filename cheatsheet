@@ -105,4 +105,6 @@ https://github.com/lavalamp-/LavaMagentoBD
 :s/\(\s*\w\+\).*/\1
 #delete first worst for each line
 awk '{print $NF}' file
+#delete empty lines
+:g/^\s*$/d
 
