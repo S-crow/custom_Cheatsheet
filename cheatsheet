@@ -101,4 +101,5 @@ echo -e 'input { \n  execute { \n    command => "ls"  \n    interval => 30 \n  }
 #backdoor Magento
 https://github.com/lavalamp-/LavaMagentoBD
 
-
+#Vi keep only first word for each line
+:s/\(\s*\w\+\).*/\1
