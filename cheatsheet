@@ -107,4 +107,5 @@ https://github.com/lavalamp-/LavaMagentoBD
 awk '{print $NF}' file
 #delete empty lines
 :g/^\s*$/d
-
+#concat files
+paste file1.txt file2.txt
