@@ -103,3 +103,6 @@ https://github.com/lavalamp-/LavaMagentoBD
 
 #Vi keep only first word for each line
 :s/\(\s*\w\+\).*/\1
+#delete first worst for each line
+awk '{print $NF}' file
+
