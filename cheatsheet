@@ -109,3 +109,11 @@ awk '{print $NF}' file
 :g/^\s*$/d
 #concat files
 paste file1.txt file2.txt
+
+#Compile C# on linux
+sudo apt install mono-complete
+mcs -out:hello.exe hello.cs
+mono hello.exe  
+
+
+
