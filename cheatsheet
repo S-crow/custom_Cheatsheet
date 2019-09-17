@@ -3,6 +3,9 @@ python -m http.server <port> (python3)
 python –m SimpleHTTPServer (python2)
 wget -r http://<ip address>:<port>
 
+#wget via powershell
+(iwr http://10.10.14.7:9000/program.exe).Content > program.exe
+
  # or 
  scp -r -p user@serveur1:chemin/vers/dossier/source user@serveur2:chemin/vers/dossier/destination
 
