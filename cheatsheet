@@ -1,5 +1,6 @@
 # easy way to transfer files
-python -m http.server <port>
+python -m http.server <port> (python3)
+python –m SimpleHTTPServer (python2)
 wget -r http://<ip address>:<port>
 
  # or 
