@@ -140,6 +140,10 @@ psexec.py pentest:'P3nT3st!'@10.10.10.152
 #Command injection (ping)
 1.1.1.1 "$(id)"  
 
+#Privesc (linEnum)
+https://github.com/Z3R0th-13/LinEnum.git
+
+
 #SUID
 find . -perm /4000 
 
