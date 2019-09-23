@@ -165,3 +165,7 @@ EOF
 
 cp /usr/share/seclists/Web-Shells/FuzzDB/cmd.aspx
 
+
+#Get .NET Versions
+c:\Users>reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP"
+
