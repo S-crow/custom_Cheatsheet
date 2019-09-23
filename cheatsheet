@@ -44,6 +44,7 @@ open port 21 then nc on 6200
 https://medium.com/@mplacio/metasploitable-1-vsftpd-2-3-4-c4d3ea5db208  
 
 #SMB  
+nmap --script smb-vuln* -p 445 192.168.1.101
 smbmap -H 10.10.10.123 -u root -p 445  
 nmap --script smb-enum-shares -p139 10.10.10.123   
 smbclient //10.10.10.123/general -U root  
