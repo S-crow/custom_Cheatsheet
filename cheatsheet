@@ -192,3 +192,11 @@ http://qual-challs.rtfm.re:8080/?layout=<svg></p><style><a%20id="</style><iframe
 ().__class__.__base__.__subclasses__()[59]()._module.__builtins__['__import__']('os').system()  
 ().__class__.__base__.__subclasses__()[59].__init__.im_func.func_globals["linecache"].os.system()  
 
+
+#Install package arch
+$ git clone https://aur.archlinux.org/google-chrome.git  
+$ cd google-chrome/  
+$ makepkg -s  
+$ sudo pacman -U google-chrome-63.0.3239.108-1-x86_64.pkg.tar.xz  
+
+
