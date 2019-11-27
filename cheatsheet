@@ -199,8 +199,9 @@ $ cd google-chrome/
 $ makepkg -s  
 $ sudo pacman -U google-chrome-63.0.3239.108-1-x86_64.pkg.tar.xz  
 
-#Kerberos attack
-view repo : kerberos_attacks_cheatsheet.md   
+#Kerberos attacks  
+view myrepo :  
+https://gist.github.com/S-crow/30efdcc5c3db7188a57435077a160682  
 
 
 
