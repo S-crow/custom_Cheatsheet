@@ -205,6 +205,10 @@ $ sudo pacman -U google-chrome-63.0.3239.108-1-x86_64.pkg.tar.xz
 view myrepo :  
 https://gist.github.com/S-crow/30efdcc5c3db7188a57435077a160682  
 
+#winrm
+use evilwinrm 
+HTTP : 5985  
+HTTPS : 5986  
 
 
 
