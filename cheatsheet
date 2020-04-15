@@ -58,6 +58,7 @@ https://github.com/lavalamp-/LavaMagentoBD
 ### SMB ###    
 nmap --script smb-vuln* -p 445 192.168.1.101
 smbmap -H 10.10.10.123 -u root -p 445  
+exploit/multi/samba/usermap_script (shell root)
 nmap --script smb-enum-shares -p139 10.10.10.123
 # enum users  
 msf > use auxiliary/scanner/smb/smb_enumusers
