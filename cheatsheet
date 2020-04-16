@@ -181,7 +181,7 @@ EOF
 cp /usr/share/seclists/Web-Shells/FuzzDB/cmd.aspx
 
 #dirsearch extension  
-dirsearch -u url -w /usr/share/dirbuster/directory-list.txt -e .php  
+dirsearch -u url -w /usr/share/dirbuster/directory-list.txt -e php  
   
 #Get .NET Versions
 c:\Users>reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP"
