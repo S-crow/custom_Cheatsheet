@@ -162,8 +162,11 @@ psexec.py pentest:'P3nT3st!'@10.10.10.152
 #Privesc (linEnum)
 https://github.com/Z3R0th-13/LinEnum.git
 
-# suid files
+# suid files  
+find / -perm -4000 -type f -exec ls -la {} 2>/dev/null \;  
 find / -perm -u=s -type f 2>/dev/null
+# writable owned-root files  
+find / -user root -perm -002 -type f -not -path "/proc/*"  2>/dev/null  
 
 # Cat various-lines-script in file without vim
 cat >fusermount.c<<EOF
