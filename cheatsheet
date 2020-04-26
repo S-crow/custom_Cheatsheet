@@ -18,7 +18,8 @@ ssh username@IP -t "bash --noprofile"
 https://docs.kali.org/general-use/kali-linux-sources-list-repositories
 
 # grep recursif
-grep -ir 'password'
+grep -ir 'password'  
+grep -ni "documentroot" /etc/apache2/*/*  
 
 ### Vulnerabilities ### 
 # shellshock with cgi 
