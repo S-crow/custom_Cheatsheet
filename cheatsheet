@@ -251,4 +251,11 @@ hydra 10.10.10.43 -l admin -P ./../rockyou.txt http-post-form "/department/login
 https://www.exploit-db.com/exploits/18650/  
 #find SIP num  
 svwar -m INVITE -e100-300 10.10.10.7  
+
+steghide extract -p [password] -sf image.jpg  
+
+
+
+
+
   
