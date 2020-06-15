@@ -254,7 +254,10 @@ svwar -m INVITE -e100-300 10.10.10.7
 
 steghide extract -p [password] -sf image.jpg  
 
-
+#view call systems in a binary     
+ltrace ./binary     
+   
+   
 
 
 
