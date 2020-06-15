@@ -257,7 +257,11 @@ steghide extract -p [password] -sf image.jpg
 #view call systems in a binary     
 ltrace ./binary     
    
-   
+#LFI to RCE (log poisonning)  
+https://www.hackingarticles.in/apache-log-poisoning-through-lfi/  
+
+
+
 
 
 
