@@ -267,6 +267,12 @@ python patator.py ssh_login host=10.10.10.76 port=22022 user=sunny password=FILE
 hashcat64.exe -a 0 -m 7400 -O -w 3 hash.txt rockyou.txt  
 
 
+#fix grub   
+grub rescue > set root=(hd0,hd6)  
+grub rescue > set prfix=(hd0,hd6)/boot/grub  
+grub rescue > insmod normal  
+grub rescue > normal   
+  
 
 
 
