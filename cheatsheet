@@ -268,8 +268,8 @@ hashcat64.exe -a 0 -m 7400 -O -w 3 hash.txt rockyou.txt
 
 
 #fix grub   
-grub rescue > set root=(hd0,hd6)  
-grub rescue > set prfix=(hd0,hd6)/boot/grub  
+grub rescue > set root=(hd0,gpt6)  
+grub rescue > set prefix=(hd0,gpt6)/boot/grub  
 grub rescue > insmod normal  
 grub rescue > normal   
   
