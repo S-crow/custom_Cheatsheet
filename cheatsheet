@@ -130,7 +130,9 @@ echo -e 'input { \n  execute { \n    command => "ls"  \n    interval => 30 \n  }
 awk '{print $NF}' file
 #delete empty lines
 :g/^\s*$/d
-#concat files
+#delete spaces beginning each line  
+:%s/^\s\+//e  
+#concat files  
 paste file1.txt file2.txt
 
 #Compile C# on linux
