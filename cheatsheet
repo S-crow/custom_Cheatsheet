@@ -278,7 +278,8 @@ set payload php/meterpreter/reverse_tc
 add options (LHOST LPORT)  
 run
 
-
+#luminosity manjaro  
+xbacklight -set 10  
 
 #fix grub   
 grub rescue > set root=(hd0,gpt6)  
