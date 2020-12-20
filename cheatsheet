@@ -70,6 +70,7 @@ nmtui
 ### SMB ###    
 nmap --script smb-vuln* -p 445 192.168.1.101
 smbmap -H 10.10.10.123 -u root -p 445  
+nmap --script vuln 10.11.1.5
 exploit/multi/samba/usermap_script (shell root)
 nmap --script smb-enum-shares -p139 10.10.10.123
 # enum users  
