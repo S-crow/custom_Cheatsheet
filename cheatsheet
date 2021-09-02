@@ -289,6 +289,9 @@ grub rescue > insmod normal
 grub rescue > normal   
   
 
+#XSS cookie stealer  
+https://github.com/s0wr0b1ndef/WebHacking101/blob/master/XSS-cookie-stealer.py  
+
 
 
 
