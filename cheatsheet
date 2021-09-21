@@ -292,6 +292,8 @@ grub rescue > normal
 #XSS cookie stealer  
 https://github.com/s0wr0b1ndef/WebHacking101/blob/master/XSS-cookie-stealer.py  
 
+#SCAN LARGE PERIMETER  
+for i in $(cat targets); do dirsearch -u https://$i -x 403,304,301,302,400,404; done  
 
 
 
