@@ -135,6 +135,8 @@ echo -e 'input { \n  execute { \n    command => "ls"  \n    interval => 30 \n  }
 :s/\(\s*\w\+\).*/\1
 #delete first worst for each line
 awk '{print $NF}' file
+#print selected field   
+awk  -F"," '{print $2}' file.txt  
 #delete empty lines
 :g/^\s*$/d
 #delete spaces beginning each line  
