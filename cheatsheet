@@ -16,6 +16,9 @@ python3 -m 2to3 script.py -w
 #escape rbash  
 ssh username@IP -t "bash --noprofile"  
 
+#find file (flag)  
+find . -name user.txt  
+
 # start apache server
 /etc/init.d/apache2 start
 
