@@ -320,4 +320,11 @@ find . -type f -name '*.py' -exec cat {} +
 #privesc user can run python script -> python library hijacking  
 https://mikadmin.fr/blog/linux-privilege-escalation-python-library-hijacking/  
 
+#compile C#  
+Visual studio code  
+dotnet new console  
+dotnet run  
+dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true  
+
+
   
