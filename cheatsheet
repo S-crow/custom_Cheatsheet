@@ -324,7 +324,12 @@ https://mikadmin.fr/blog/linux-privilege-escalation-python-library-hijacking/
 Visual studio code  
 dotnet new console  
 dotnet run  
-dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true  
+dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true
+#add these lines in csproj :  
+<TargetFramework>netcoreapp3.1</TargetFramework>  
+<RootNamespace>Malware_Evasion</RootNamespace>  
+<PublishWithAspNetCoreTargetManifest>False</PublishWithAspNetCoreTargetManifest>  
+
 
 
   
